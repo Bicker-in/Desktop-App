@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from './logo.svg'
 import tauriCircles from './tauri.svg'
 import tauriWord from './wordmark.svg'
 import './App.css'
 
 function App() {
+  const [isClicked, setIsClicked] = useState(false);
   return (
     <div className="App">
       <header className="App-header">
@@ -32,6 +33,9 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <button onClick={() => setIsClicked(!isClicked)}>
+          {isClicked ? 'Click Here Again' : 'Click Here!'}
+        </button>
       </header>
     </div>
   )

@@ -52,3 +52,13 @@ div.inline-logo .smaller {
     transform: rotate(360deg);
   }
 }
+
+button {
+  background-color: red;
+  padding: 5pt;
+  border-width: 0px;
+}
+
+button:active {
+  color: red;
+}
