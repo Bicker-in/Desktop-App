@@ -26,6 +26,7 @@ jobs:
         with:
           name: node_modules
           path: node_modules.zip
+          if-no-files-found: error
   check-bickerin-lint:
     runs-on: ubuntu-latest
     needs: setup-bickerin-app
@@ -38,8 +39,9 @@ jobs:
         with:
           name: node_modules
           path: node_modules.zip
+      - run: ls -alt
       - name: Unzip artifact for other jobs
-        run: unzip node_modules.zip
+        run: unzip ./node_modules.zip
       - run: npm run lint
 
   check-bickerin-build:
