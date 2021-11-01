@@ -40,7 +40,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: node_modules
-          path: node_modules.zip
+          path: zipped_modules
       - run: ls -alt
       - name: Unzip artifact for other jobs
         run: unzip ./zipped_modules/node_modules.zip
@@ -57,7 +57,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: node_modules
-          path: node_modules.zip
+          path: zipped_modules
       - name: Unzip artifact for other jobs
         run: unzip ./zipped_modules/node_modules.zip
       - run: npm run build
