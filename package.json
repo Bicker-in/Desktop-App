@@ -4,12 +4,13 @@
   "description": "",
   "scripts": {
     "start": "vite",
-    "build": "vite build && mv ./dist ./build",
+    "clean": "rm -fR ./build",
+    "build": "vite build && mv dist build",
     "lint": "eslint ./src --ext .tsx,.ts --max-warnings 0",
     "test": "jest",
     "tauri": "tauri",
     "run-app": "npm run tauri dev",
-    "build-app": "npm run tauri build",
+    "build-app": "npm run clean && npm run build && npm run tauri build",
     "typecheck": "tsc --noEmit",
     "typewatch": "tsc --noEmit --watch"
   },
