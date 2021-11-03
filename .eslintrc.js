@@ -1,26 +1,35 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
+    node: true,
   },
   extends: [
-    'plugin:react/recommended',
     'airbnb',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
+    'plugin:jsx-a11y/strict',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 12,
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'jsdoc',
-  ],
+  plugins: ['react', 'jsx-a11y', '@typescript-eslint', 'jsdoc'],
   rules: {
+    'react-hooks/exhaustive-deps': 'error',
+    'no-var': 'error',
+    'brace-style': 'error',
+    'prefer-template': 'error',
+    radix: 'error',
+    'space-before-blocks': 'error',
+    'import/prefer-default-export': 'off',
+    'import/extensions': ['error', 'never'],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', 'tsx'] }],
     'no-use-before-define': 'off',
     'import/no-unresolved': 'error',
@@ -56,16 +65,25 @@ module.exports = {
     'jsdoc/tag-lines': 1,
     'jsdoc/valid-types': 1,
   },
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
+  overrides: [
+    {
+      files: [
+        '**/*.test.js',
+        '**/*.test.jsx',
+        '**/*.test.tsx',
+        '**/*.spec.js',
+        '**/*.spec.jsx',
+        '**/*.spec.tsx',
+      ],
+      env: {
+        jest: true,
+      },
     },
+  ],
+  settings: {
     'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-
-        // use <root>/path/to/folder/tsconfig.json
-        project: '.',
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },

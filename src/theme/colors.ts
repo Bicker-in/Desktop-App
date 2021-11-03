@@ -1,5 +1,3 @@
-import { extendTheme } from '@chakra-ui/react';
-
 const colors = {
   // primary: {
   //   500:
@@ -12,8 +10,4 @@ const colors = {
   },
 };
 
-const fonts = {
-  primary: 'Roboto',
-};
-
-export default extendTheme({ colors, fonts });
+export default colors;

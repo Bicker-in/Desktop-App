@@ -1,0 +1,6 @@
+build
+node_modules
+.github
+src-tauri
+.prettierrc.js
+__tests__
