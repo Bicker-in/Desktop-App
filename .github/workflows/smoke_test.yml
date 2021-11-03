@@ -64,6 +64,5 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y webkit2gtk-4.0
     - name: install app dependencies and build it
-      - run: |
-        npm install
-        npm run build-app
+    - run: npm install
+    - run: npm run build-app
