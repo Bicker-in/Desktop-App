@@ -26,13 +26,3 @@ test('hover login button', async () => {
   const loginButtonStyle = window.getComputedStyle(loginButton);
 });
 
-// test('focus on username/password input bars', async () => {
-//   render(<ChakraProvider theme={theme}><Login /></ChakraProvider>);
-
-//   // screen.getByTestId('login').focus();
-
-//   const usernameInputStyle = window.getComputedStyle(screen.getByTestId('login'));
-
-//   console.log(usernameInputStyle);
-
-// });
