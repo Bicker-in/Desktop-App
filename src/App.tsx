@@ -1,6 +1,11 @@
 import React, { ReactElement } from 'react';
-import { ChakraProvider, Box } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter } from 'react-router-dom';
+import '@fontsource/roboto';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/700.css';
 import theme from './theme';
+import AppRoutes from './routes';
 
 /**
  * App
@@ -11,10 +16,9 @@ import theme from './theme';
 function App(): ReactElement {
   return (
     <ChakraProvider theme={theme}>
-      <Box bgColor="brand.primary-dark" height="100vh">
-        <h1>Welcome to React Parcel Micro App!</h1>
-        <p>Hard to get more minimal than this React app.</p>
-      </Box>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
     </ChakraProvider>
   );
 }
