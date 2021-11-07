@@ -26,6 +26,21 @@ const input = {
         fontWeight: 'light',
       },
     },
+    none: {
+      field: {
+        backgroundColor: 'inherit',
+        borderWidth: 0,
+        color: 'white',
+        fontFamily: 'primary',
+        '[type=file]::file-selector-button': {
+          border: '2px solid #6c5ce7',
+          padding: '.2em .4em',
+          borderRadius: '.2em',
+          backgroundColor: '#a29bfe',
+          transition: '1s',
+        },
+      },
+    },
   },
   defaultProps: {
     variant: null,

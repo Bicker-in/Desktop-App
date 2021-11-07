@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
-import '@fontsource/roboto';
+import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/700.css';
 import theme from './theme';

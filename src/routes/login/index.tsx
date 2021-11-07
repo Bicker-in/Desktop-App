@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { Flex, Heading, ListItem, UnorderedList, VStack } from '@chakra-ui/react';
 import { mainHeading, bulletPoints } from '../../constants/login.json';
-import LoginForm from './components/LoginForm';
+import LoginCard from './components/LoginCard';
 
 /**
  * FeatureList
@@ -44,14 +44,21 @@ function Login(): ReactElement {
         display={['none', 'none', 'none', 'flex']}
         padding="4"
         color="white"
+        transition="all 0.35s linear"
       >
         <VStack spacing="12">
           <Heading variant="regular">{mainHeading}</Heading>
           <FeaturesList />
         </VStack>
       </Flex>
-      <Flex justifyContent="center" alignItems="center" bgColor="brand.tertiary-dark" flexGrow={4}>
-        <LoginForm />
+      <Flex
+        transition="all 500ms linear"
+        justifyContent="center"
+        alignItems="center"
+        bgColor="brand.tertiary-dark"
+        flexGrow={4}
+      >
+        <LoginCard />
       </Flex>
     </Flex>
   );

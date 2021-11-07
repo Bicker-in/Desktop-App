@@ -14,7 +14,9 @@ const Card = {
       paddingX: '6',
       position: 'relative',
     },
-    relative: {
+    large: {
+      paddingY: '4',
+      paddingX: '6',
       position: 'relative',
     },
   },

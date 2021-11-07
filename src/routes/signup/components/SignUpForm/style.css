@@ -1,0 +1,11 @@
+input[type=file]::file-selector-button {
+  border: 2px solid #6c5ce7;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color: #a29bfe;
+  transition: 1s;
+}
+
+.fileUploader[type=file]::file-selector-button {
+  background-color: red;
+}

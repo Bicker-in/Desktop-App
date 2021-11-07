@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react';
-import { Box } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Flex, Heading, Link, Text } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
+import Card from '../../components/Card';
+import SignUpForm from './components/SignUpForm';
 
 /**
  * SignUp
@@ -10,12 +12,38 @@ import { Link } from 'react-router-dom';
  */
 function SignUp(): ReactElement {
   return (
-    <Box bgColor="brand.primary-dark" height="100vh">
-      <h1>SignUp</h1>
-      <Link to="/">
-        <h2>Login</h2>
-      </Link>
-    </Box>
+    <Flex
+      my="10"
+      bgColor="brand.primary-gray"
+      flexDirection="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Card
+        variant="large"
+        w={['95%', '90%', '70%']}
+        alignItems="flex-start"
+        justifyContent="flex-start"
+        overflowY="scroll"
+        boxShadow="2xl"
+      >
+        <Flex alignItems="center" pb="md">
+          <Link as={RouterLink} to="/">
+            <Text fontSize={['xl', '3xl']}>{'<-'}</Text>
+          </Link>
+          <Heading
+            fontSize={['xl', '3xl', '4xl']}
+            as="h1"
+            variant="regular"
+            borderColor="brand.secondary"
+            borderBottomWidth={2}
+          >
+            User Sign Up
+          </Heading>
+        </Flex>
+        <SignUpForm />
+      </Card>
+    </Flex>
   );
 }
 

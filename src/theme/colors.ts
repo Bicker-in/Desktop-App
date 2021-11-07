@@ -10,6 +10,7 @@ const colors = {
     'primary-gray': '#474646',
     secondary: '#208905',
     highlight: '#0FC100',
+    alert: '#dc143c',
   },
 };
 

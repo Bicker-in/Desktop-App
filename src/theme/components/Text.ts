@@ -9,9 +9,17 @@ const Text = {
   variants: {
     link: {
       fontFamily: 'primary',
-      fontSize: 'lg',
+      fontSize: 'sm',
       color: 'brand.secondary',
       fontWeight: 'light',
+      ':hover': {
+        textDecoration: 'underline',
+      },
+    },
+    alertFormMessage: {
+      fontFamily: 'primary',
+      color: 'brand.alert',
+      fontSize: 'xs',
     },
   },
 };

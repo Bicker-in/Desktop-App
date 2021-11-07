@@ -1,7 +1,7 @@
-import { Box, useStyleConfig } from '@chakra-ui/react';
+import { Box, useStyleConfig, BoxProps } from '@chakra-ui/react';
 import React, { FunctionComponent } from 'react';
 
-interface CardProps {
+interface CardProps extends BoxProps {
   variant: string;
 }
 

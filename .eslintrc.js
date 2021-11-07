@@ -33,6 +33,15 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', 'tsx'] }],
     'no-use-before-define': 'off',
     'import/no-unresolved': 'error',
+    'jsx-a11y/label-has-for': 0,
+    'jsx-a11y/label-has-associated-control': [
+      2,
+      {
+        labelComponents: ['label'],
+        labelAttributes: ['htmlFor'],
+        controlComponents: ['input'],
+      },
+    ],
     '@typescript-eslint/no-use-before-define': ['error'],
     'jsdoc/check-access': 1,
     'jsdoc/check-alignment': 1,

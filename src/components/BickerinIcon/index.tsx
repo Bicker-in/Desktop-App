@@ -44,7 +44,7 @@ BickerinSVG.defaultProps = {
 };
 
 const BickerinIcon: FunctionComponent = () => (
-  <Box backgroundColor="green.600" borderRadius="md">
+  <Box backgroundColor="brand.secondary" borderRadius="md">
     <BickerinSVG />
   </Box>
 );

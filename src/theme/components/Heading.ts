@@ -7,7 +7,6 @@ const heading = {
   },
   variants: {
     regular: {
-      paddingX: '4',
       size: 'xl',
       fontFamily: 'primary',
       fontWeight: 'normal',

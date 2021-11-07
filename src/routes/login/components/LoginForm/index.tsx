@@ -1,40 +1,45 @@
-import { Box, Button, Heading, HStack, Input, VStack, Text } from '@chakra-ui/react';
-import React, { ReactElement } from 'react';
-import BickerinIcon from '../../../../components/BickerinIcon';
-import Card from '../../../../components/Card';
+import React, { FunctionComponent } from 'react';
+import { Button, Input, VStack, Text } from '@chakra-ui/react';
+import { useFormik } from 'formik';
+import { yupLoginValidationSchema } from '../../validation/loginForm';
 
-/**
- * LoginForm
- *
- * @description Component that contains the form for a client to login to their account.
- * @returns {ReactElement} LoginForm Component
- */
-function LoginForm(): ReactElement {
+const LoginForm: FunctionComponent = () => {
+  const formController = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: yupLoginValidationSchema,
+    onSubmit: () => {
+      // alert(JSON.stringify(values, null, 2));
+    },
+  });
+
   return (
-    <Card variant="small">
-      <VStack spacing={8}>
-        <HStack>
-          <BickerinIcon />
-          <Heading fontSize="5xl" fontWeight="light">
-            Bicker<b>!n</b>
-          </Heading>
-        </HStack>
-        <VStack spacing={5}>
-          <Input variant="small" placeholder="Username" />
-          <Input variant="small" placeholder="Password" />
-        </VStack>
-        <VStack spacing={-0.25}>
-          <Button data-testid="login" role="button" variant="solid" size="xl">
-            Login &gt;&gt;
-          </Button>
-          <Text variant="link">or signup...</Text>
-        </VStack>
+    <form onSubmit={formController.handleSubmit}>
+      <VStack alignItems="center" spacing={6}>
+        <label htmlFor="email">
+          <Input
+            variant="small"
+            placeholder="Email"
+            id="email"
+            name="email"
+            type="text"
+            onChange={formController.handleChange}
+            onBlur={formController.handleBlur}
+            value={formController.values.email}
+          />
+          {formController.touched.email && formController.errors.email ? (
+            <Text variant="alertFormMessage">{formController.errors.email}</Text>
+          ) : null}
+        </label>
+        <Input variant="small" placeholder="Password" />
+        <Button type="submit" data-testid="login" role="button" variant="solid" size="xl">
+          Login &gt;&gt;
+        </Button>
       </VStack>
-      <Box fontSize="sm" position="absolute" bottom={3} right={3} color="white">
-        Forgot password?
-      </Box>
-    </Card>
+    </form>
   );
-}
+};
 
 export default LoginForm;
