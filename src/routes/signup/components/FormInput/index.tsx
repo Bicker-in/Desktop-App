@@ -32,7 +32,7 @@ const FormInput: FunctionComponent<FormInputProps> = ({
           <Text>
             {title}
             {isRequired && (
-              <Text display="inline" color="brand.secondary">
+              <Text as="span" display="inline" color="brand.secondary">
                 *
               </Text>
             )}

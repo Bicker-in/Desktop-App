@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react';
-import { Flex, Heading, Link, Text } from '@chakra-ui/react';
+import { Flex, Heading, Link } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import Icon from '../../components/Icon';
 import Card from '../../components/Card';
 import SignUpForm from './components/SignUpForm';
 
@@ -29,7 +31,7 @@ function SignUp(): ReactElement {
       >
         <Flex alignItems="center" pb="md">
           <Link data-testid="Back Button" as={RouterLink} to="/">
-            <Text fontSize={['xl', '3xl']}>{'<-'}</Text>
+            <Icon icon={faArrowLeft} />
           </Link>
           <Heading
             fontSize={['xl', '3xl', '4xl']}
@@ -37,6 +39,7 @@ function SignUp(): ReactElement {
             variant="regular"
             borderColor="brand.secondary"
             borderBottomWidth={2}
+            ml="4"
           >
             User Sign Up
           </Heading>

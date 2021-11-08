@@ -111,7 +111,7 @@ const SignUpForm = (): ReactElement => {
         <Box>
           <Text>
             Required
-            <Text display="inline" color="brand.secondary">
+            <Text as="span" display="inline" color="brand.secondary">
               *
             </Text>
           </Text>

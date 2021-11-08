@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, queryByText, queryByTestId } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import '../../__mocks__/matchMediaMock';
 import { PageComponent } from '../../__mocks__/indComponents';
 import Login from '../../src/routes/login';
 import App from '../../src/App';
