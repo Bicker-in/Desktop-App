@@ -28,7 +28,7 @@ function SignUp(): ReactElement {
         boxShadow="2xl"
       >
         <Flex alignItems="center" pb="md">
-          <Link as={RouterLink} to="/">
+          <Link data-testid="Back Button" as={RouterLink} to="/">
             <Text fontSize={['xl', '3xl']}>{'<-'}</Text>
           </Link>
           <Heading

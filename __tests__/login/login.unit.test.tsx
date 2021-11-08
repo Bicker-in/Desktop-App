@@ -1,14 +1,13 @@
 import React from 'react';
-import { render, screen, cleanup, queryByText, queryByTestId, fireEvent } from '@testing-library/react';
+import { render, screen, queryByText, queryByTestId } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { PageComponent } from '../../__mocks__/indComponents';
 import Login from '../../src/routes/login';
 import App from '../../src/App';
 
-
 test('loads into login page', () => {
-  render(<PageComponent path="/" element={<Login />}/>);
+  render(<PageComponent path="/" element={<Login />} />);
 
   expect(screen.getByText('Bicker'));
   expect(screen.getByText('Login >>'));
@@ -16,15 +15,14 @@ test('loads into login page', () => {
 });
 
 test('hover over login button', () => {
-  render(<PageComponent path="/" element={<Login />}/>);
+  render(<PageComponent path="/" element={<Login />} />);
 
   userEvent.hover(screen.getByText('Login >>'));
 
-  const loginButton = document.getElementsByTagName('button')[0];
 });
 
 test('type in email/password input bars', () => {
-  render(<PageComponent path="/" element={<Login />}/>);
+  render(<PageComponent path="/" element={<Login />} />);
 
   const emailContent = 'cine@gmail.com';
   const passwordContent = '123password';
@@ -43,16 +41,16 @@ test('type in email/password input bars', () => {
 });
 
 test('click on login button', async () => {
-  render(<PageComponent path="/" element={<Login />}/>);
+  render(<PageComponent path="/" element={<Login />} />);
 
   const button = screen.getByText('Login >>');
-  
+
   // Before User clicks login button, loader should not be present.
   expect(queryByTestId(document.body, 'loadingSpinner')).not.toBeInTheDocument();
 
   // User clicks login button.
   userEvent.click(button);
-  
+
   // Login >> text on button should disappear.
   expect(queryByText(document.body, 'Login >>')).not.toBeInTheDocument();
 
