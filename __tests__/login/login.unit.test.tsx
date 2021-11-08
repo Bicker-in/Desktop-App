@@ -18,7 +18,6 @@ test('hover over login button', () => {
   render(<PageComponent path="/" element={<Login />} />);
 
   userEvent.hover(screen.getByText('Login >>'));
-
 });
 
 test('type in email/password input bars', () => {

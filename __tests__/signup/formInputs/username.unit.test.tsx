@@ -8,10 +8,10 @@ import SignUp from '../../../src/routes/signup';
 test('click username input and leave input', async () => {
   render(<PageComponent path="/" element={<SignUp />} />);
 
-  // Focus on email input bar.
+  // Focus on username input bar.
   screen.getByTestId('usernameInput').focus();
 
-  // Blur on email input bar.
+  // Blur on username input bar.
   screen.getByTestId('emailInput').focus();
 
   // Should show 'Required' error message.
@@ -23,15 +23,15 @@ test('type in username input with an username that is too long', async () => {
 
   const randomInput = 'sadasdasd7bgbgmail8bffxscomewqqweeqwewqqewweqeqwqweqewqweqweewqeqw';
 
-  // Focus on email input bar.
+  // Focus on username input bar.
   screen.getByTestId('usernameInput').focus();
 
-  // Type on email bar with an email that is more than 50 chars.
+  // Type on username bar with an username that is more than 50 chars.
   userEvent.type(screen.getByTestId('usernameInput'), randomInput);
 
-  // Blur on email input bar.
+  // Blur on username input bar.
   screen.getByTestId('emailInput').focus();
 
-  // Should show a error message that the text in the email bar is too long.
+  // Should show a error message that the text in the username bar is too long.
   await waitFor(() => expect(screen.getByText('Must be 25 characters or less')));
 });

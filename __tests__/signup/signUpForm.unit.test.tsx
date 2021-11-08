@@ -7,7 +7,7 @@ import SignUp from '../../src/routes/signup';
 import App from '../../src/App';
 
 test('loads into SignUp page', () => {
-  render(<PageComponent path="/" element={<SignUp />}/>);
+  render(<PageComponent path="/" element={<SignUp />} />);
 
   expect(screen.getByText('User Sign Up'));
 });
