@@ -1,11 +1,18 @@
 input[type=file]::file-selector-button {
-  border: 2px solid #6c5ce7;
-  padding: .2em .4em;
-  border-radius: .2em;
-  background-color: #a29bfe;
+  border: 0px;
+  padding: .4em .8em;
+  border-radius: .4em;
   transition: 1s;
+  color: white;
+  font-size: '15rem';
 }
 
 .fileUploader[type=file]::file-selector-button {
-  background-color: red;
+  background-color: #208905;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.fileUploader[type=file]::file-selector-button:hover {
+  background-color: #474646;
+  cursor: pointer;
 }
