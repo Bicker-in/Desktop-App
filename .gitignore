@@ -105,3 +105,6 @@ dist
 
 # Tauri Rust Target
 ./src-tauri/target
+
+# Tauri Build Directory
+build/
